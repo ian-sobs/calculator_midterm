@@ -15,7 +15,7 @@
         {
             if (sender is Button button)
             {
-                if(calcOutput.Text == "0")
+                if(calcOutput.Text == "0" || operation != (char)0)
                 {
                     calcOutput.Text = "";
                 }
@@ -23,8 +23,9 @@
 
                 if (input != "0")
                 {
-                    calcOutput.Text += button.CommandParameter.ToString();
+                    
                     input += button.CommandParameter.ToString();
+                    calcOutput.Text = input;
                 }
                 
 
@@ -43,7 +44,16 @@
         {
             if (sender is Button button)
             {
-                calcOutput.Text = "0";
+                if(operation != (char)0)
+                {
+                    calculate();
+                    calcOutput.Text = Convert.ToString(lOperand);
+                }
+                else
+                {
+                    calcOutput.Text = "0";
+                }
+                
                 input = "";
                 string opString = button.CommandParameter.ToString();
                 operation = opString[0]; 
@@ -60,7 +70,15 @@
 
         public void OpEval(object sender, EventArgs e)
         {
-            switch(operation)
+            calculate();
+            rOperand = 0;
+            operation = (char)0;
+            calcOutput.Text = Convert.ToString(lOperand);
+        }
+
+        public void calculate()
+        {
+            switch (operation)
             {
                 case '+':
                     lOperand += rOperand;
@@ -73,11 +91,8 @@
                     break;
                 case '/':
                     lOperand /= rOperand;
-                    break;    
+                    break;
             }
-            rOperand = 0;
-            
-            calcOutput.Text = Convert.ToString(lOperand);
         }
 
     }
