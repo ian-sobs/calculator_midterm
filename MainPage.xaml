@@ -39,7 +39,8 @@
                 CornerRadius="0"
                 BackgroundColor="Gray"
                 TextColor="Black"
-                Grid.ColumnSpan="2"/>
+                Grid.ColumnSpan="2"
+                Clicked="ClearOutput"/>
         
         <Button Text="DEL"
                Grid.Row="2"
