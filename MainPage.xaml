@@ -42,6 +42,7 @@
                 Grid.ColumnSpan="2"
                 Clicked="ClearOutput"/>
         
+        
         <Button Text="DEL"
                Grid.Row="2"
                Grid.Column="2"
@@ -152,7 +153,7 @@
                Grid.Column="2"
                BackgroundColor="Gray"
                TextColor="Black"
-               CommandParameter="7"
+               CommandParameter="3"
                Clicked="handleClick"
                Grid.ColumnSpan="1"/>
 
