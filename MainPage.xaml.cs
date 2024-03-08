@@ -18,10 +18,10 @@
             if (sender is Button button)
             {
                 string num = button.CommandParameter.ToString();
-                if (operation != (char)0)
-                {
+     /*           if (operation != (char)0)
+                {*/
                     calcOutput.Text = "";
-                }
+              /*  }*/
                 // Extract the value associated with the clicked button
 
                 if (input != "0")
@@ -54,12 +54,12 @@
                 }
                 calcOutput.Text = input;
 
-                if (operation != (char)0 && input[input.Length - 1] != '.')
+                if (operation != (char)0 && input[input.Length - 1] != '.' && !string.IsNullOrEmpty(input))
                 {
 
                     rOperand = float.Parse(input);
                 }
-                else if(operation == (char)0 && input[input.Length - 1] != '.')
+                else if(operation == (char)0 && input[input.Length - 1] != '.' && !string.IsNullOrEmpty(input))
                 {
                     lOperand = float.Parse(input);
                 }
@@ -120,6 +120,40 @@
                 case '/':
                     lOperand /= rOperand;
                     break;
+            }
+        }
+
+        public void DeleteNum(object sender, EventArgs e)
+        {
+            if(calcOutput.Text != "0")
+            {
+                int inputLength = input.Length;
+                char lastChar = input[inputLength - 1];
+                
+
+                if (lastChar == '.')
+                {
+                    pointSet = false;
+                }
+
+                input = input.Remove(inputLength - 1);
+                if(input.Length > 0){
+                    calcOutput.Text = input;
+                }
+                else
+                {
+                    calcOutput.Text = "0";
+                }
+
+                if (operation != (char)0 && input.Length > 0 && input[input.Length - 1] != '.')
+                {
+
+                    rOperand = float.Parse(input);
+                }
+                else if (operation == (char)0 && input.Length > 0 && input[input.Length - 1] != '.')
+                {
+                    lOperand = float.Parse(input);
+                }
             }
         }
 
