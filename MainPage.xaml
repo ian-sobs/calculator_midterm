@@ -40,6 +40,7 @@
                 BackgroundColor="Gray"
                 TextColor="Black"
                 Grid.ColumnSpan="2"
+                Style="{StaticResource ClickableButtonStyle}" 
                 Clicked="ClearOutput"/>
         
         
@@ -50,6 +51,7 @@
                BackgroundColor="Gray"
                TextColor="Black"
                Clicked="DeleteNum"
+                Style="{StaticResource ClickableButtonStyle}" 
                Grid.ColumnSpan="1"/>
         
         <Button Text="/"
@@ -59,6 +61,7 @@
                TextColor="White"
                Grid.ColumnSpan="1"
                 Clicked="HandleOperation"
+                Style="{StaticResource ClickableButtonStyle}" 
                 CommandParameter="/"/>
         
         <!--2nd keyboard row-->
@@ -69,6 +72,7 @@
                TextColor="Black"
                CommandParameter="7"
                Clicked="handleClick"
+                Style="{StaticResource ClickableButtonStyle}" 
                Grid.ColumnSpan="1"/>
         
         <Button Text="8"
@@ -78,6 +82,7 @@
                TextColor="Black"
                CommandParameter="8"
                Clicked="handleClick"
+                Style="{StaticResource ClickableButtonStyle}" 
                Grid.ColumnSpan="1"/>
         
         <Button Text="9"
@@ -87,6 +92,7 @@
                TextColor="Black"
                CommandParameter="9"
                Clicked="handleClick"
+                Style="{StaticResource ClickableButtonStyle}" 
                Grid.ColumnSpan="1"/>
 
         <Button Text="X"
@@ -96,6 +102,7 @@
                TextColor="White"
                Grid.ColumnSpan="1"
                 Clicked="HandleOperation"
+                Style="{StaticResource ClickableButtonStyle}" 
                 CommandParameter="X"/>
 
         <!--3nd keyboard row-->
@@ -106,6 +113,7 @@
                CommandParameter="4"
                Clicked="handleClick"
                TextColor="Black"
+                Style="{StaticResource ClickableButtonStyle}" 
                Grid.ColumnSpan="1"/>
 
         <Button Text="5"
@@ -115,6 +123,7 @@
                TextColor="Black"
                CommandParameter="5"
                Clicked="handleClick"
+                Style="{StaticResource ClickableButtonStyle}" 
                Grid.ColumnSpan="1"/>
 
         <Button Text="6"
@@ -124,6 +133,7 @@
                TextColor="Black"
                CommandParameter="6"
                Clicked="handleClick"
+                Style="{StaticResource ClickableButtonStyle}" 
                Grid.ColumnSpan="1"/>
 
         <Button Text="-"
@@ -133,6 +143,7 @@
                TextColor="White"
                Grid.ColumnSpan="1"
                 Clicked="HandleOperation"
+                Style="{StaticResource ClickableButtonStyle}" 
                 CommandParameter="-"/>
 
         <!--4th keyboard row-->
@@ -142,6 +153,7 @@
                BackgroundColor="Gray"
                TextColor="Black"
                CommandParameter="1"
+                Style="{StaticResource ClickableButtonStyle}" 
                Clicked="handleClick"
                Grid.ColumnSpan="1"/>
 
@@ -151,12 +163,14 @@
                BackgroundColor="Gray"
                TextColor="Black"
                CommandParameter="2"
+                Style="{StaticResource ClickableButtonStyle}" 
                Clicked="handleClick"
                Grid.ColumnSpan="1"/>
 
         <Button Text="3"
                Grid.Row="5"
                Grid.Column="2"
+                Style="{StaticResource ClickableButtonStyle}" 
                BackgroundColor="Gray"
                TextColor="Black"
                CommandParameter="3"
@@ -166,6 +180,7 @@
         <Button Text="+"
                Grid.Row="5"
                Grid.Column="3"
+                Style="{StaticResource ClickableButtonStyle}" 
                BackgroundColor="Orange"
                TextColor="White"
                Grid.ColumnSpan="1"
@@ -178,6 +193,7 @@
                Grid.Column="0"
                BackgroundColor="Gray"
                TextColor="Black"
+                Style="{StaticResource ClickableButtonStyle}" 
                 Clicked="handleClick"
                 CommandParameter="0"
                Grid.ColumnSpan="2"/>
@@ -188,6 +204,7 @@
                BackgroundColor="Gray"
                TextColor="Black"
                Grid.ColumnSpan="1"
+                Style="{StaticResource ClickableButtonStyle}" 
                 CommandParameter="."
                 Clicked="handleClick"
                 />
@@ -196,6 +213,7 @@
                Grid.Row="6"
                Grid.Column="3"
                BackgroundColor="Orange"
+                Style="{StaticResource ClickableButtonStyle}" 
                TextColor="White"
                Grid.ColumnSpan="1"
                 Clicked="OpEval"/>
