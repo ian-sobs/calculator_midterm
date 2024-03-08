@@ -22,7 +22,8 @@
             <ColumnDefinition  />
         </Grid.ColumnDefinitions>
 
-        <Label Text="0"
+        <Label x:Name="calcOutput"
+               Text="0"
                TextColor="White"
                FontSize="95"
                HorizontalTextAlignment="End"
@@ -46,6 +47,7 @@
                CornerRadius="0"
                BackgroundColor="Gray"
                TextColor="Black"
+               
                Grid.ColumnSpan="1"/>
         
         <Button Text="/"
@@ -61,6 +63,8 @@
                Grid.Column="0"
                BackgroundColor="Gray"
                TextColor="Black"
+               CommandParameter="7"
+               Clicked="handleClick"
                Grid.ColumnSpan="1"/>
         
         <Button Text="8"
@@ -68,6 +72,8 @@
                Grid.Column="1"
                BackgroundColor="Gray"
                TextColor="Black"
+               CommandParameter="8"
+               Clicked="handleClick"
                Grid.ColumnSpan="1"/>
         
         <Button Text="9"
@@ -75,6 +81,8 @@
                Grid.Column="2"
                BackgroundColor="Gray"
                TextColor="Black"
+               CommandParameter="9"
+               Clicked="handleClick"
                Grid.ColumnSpan="1"/>
 
         <Button Text="X"
@@ -89,6 +97,8 @@
                Grid.Row="4"
                Grid.Column="0"
                BackgroundColor="Gray"
+               CommandParameter="4"
+               Clicked="handleClick"
                TextColor="Black"
                Grid.ColumnSpan="1"/>
 
@@ -97,6 +107,8 @@
                Grid.Column="1"
                BackgroundColor="Gray"
                TextColor="Black"
+               CommandParameter="5"
+               Clicked="handleClick"
                Grid.ColumnSpan="1"/>
 
         <Button Text="6"
@@ -104,6 +116,8 @@
                Grid.Column="2"
                BackgroundColor="Gray"
                TextColor="Black"
+               CommandParameter="6"
+               Clicked="handleClick"
                Grid.ColumnSpan="1"/>
 
         <Button Text="-"
@@ -119,6 +133,8 @@
                Grid.Column="0"
                BackgroundColor="Gray"
                TextColor="Black"
+               CommandParameter="1"
+               Clicked="handleClick"
                Grid.ColumnSpan="1"/>
 
         <Button Text="2"
@@ -126,6 +142,8 @@
                Grid.Column="1"
                BackgroundColor="Gray"
                TextColor="Black"
+               CommandParameter="2"
+               Clicked="handleClick"
                Grid.ColumnSpan="1"/>
 
         <Button Text="3"
@@ -133,6 +151,8 @@
                Grid.Column="2"
                BackgroundColor="Gray"
                TextColor="Black"
+               CommandParameter="7"
+               Clicked="handleClick"
                Grid.ColumnSpan="1"/>
 
         <Button Text="+"
