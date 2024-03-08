@@ -18,16 +18,23 @@
                     calcOutput.Text = "";
                 }
                 // Extract the value associated with the clicked button
-                input += button.CommandParameter.ToString();
                 calcOutput.Text += button.CommandParameter.ToString();
+                input += button.CommandParameter.ToString();
+                
 
                 
             }
         }
 
-        public void handleOperation()
+        public void HandleOperation()
         {
 
+        }
+
+        public void ClearOutput(object sender, EventArgs e)
+        {
+            calcOutput.Text = "0";
+            input = "";
         }
 
 
