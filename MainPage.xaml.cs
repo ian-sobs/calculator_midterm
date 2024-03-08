@@ -76,6 +76,15 @@
             calcOutput.Text = Convert.ToString(lOperand);
         }
 
+        public void HandleDel(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(input))
+            {
+                input = input.Remove(input.Length - 1);
+                calcOutput.Text = input;
+            }
+        }
+
         public void calculate()
         {
             switch (operation)

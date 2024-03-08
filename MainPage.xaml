@@ -49,7 +49,7 @@
                CornerRadius="0"
                BackgroundColor="Gray"
                TextColor="Black"
-               
+               Clicked="HandleDel"
                Grid.ColumnSpan="1"/>
         
         <Button Text="/"
