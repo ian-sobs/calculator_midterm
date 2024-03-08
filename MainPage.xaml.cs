@@ -100,6 +100,7 @@
         {
             calculate();
             rOperand = 0;
+            input = "";
             operation = (char)0;
             calcOutput.Text = Convert.ToString(lOperand);
         }
@@ -128,7 +129,12 @@
             if(calcOutput.Text != "0")
             {
                 int inputLength = input.Length;
-                char lastChar = input[inputLength - 1];
+                char lastChar = '\0';
+                if(inputLength > 0)
+                {
+                    lastChar = input[inputLength - 1];
+                    input = input.Remove(inputLength - 1);
+                }
                 
 
                 if (lastChar == '.')
@@ -136,7 +142,7 @@
                     pointSet = false;
                 }
 
-                input = input.Remove(inputLength - 1);
+                
                 if(input.Length > 0){
                     calcOutput.Text = input;
                 }
