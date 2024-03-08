@@ -15,31 +15,39 @@
         {
             if (sender is Button button)
             {
-                if(calcOutput.Text == "0" || operation != (char)0)
+                if (calcOutput.Text == "0" || operation != (char)0)
                 {
                     calcOutput.Text = "";
                 }
-                // Extract the value associated with the clicked button
 
-                if (input != "0")
-                {
-                    
-                    input += button.CommandParameter.ToString();
-                    calcOutput.Text = input;
-                }
-                
+                string buttonText = button.CommandParameter.ToString();
 
-                if(operation != (char)0)
+                if (buttonText == ".")
                 {
-                    rOperand = float.Parse(input);
+                    // Check if the input string already contains a decimal point
+                    if (!input.Contains("."))
+                    {
+                        // If it doesn't contain a decimal point, allow adding it
+                        input += ".";
+                        calcOutput.Text = input;
+                    }
                 }
                 else
                 {
-                    lOperand = float.Parse(input);
+                    input += buttonText;
+                    calcOutput.Text = input;
+                }
+
+                if (operation != (char)0)
+                {
+                    rOperand = float.TryParse(input, out float rValue) ? rValue : 0;
+                }
+                else
+                {
+                    lOperand = float.TryParse(input, out float lValue) ? lValue : 0;
                 }
             }
         }
-
         public void HandleOperation(object sender, EventArgs e)
         {
             if (sender is Button button)

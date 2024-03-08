@@ -188,7 +188,8 @@
                BackgroundColor="Gray"
                TextColor="Black"
                Grid.ColumnSpan="1"
-                
+                CommandParameter="."
+                Clicked="handleClick"
                 />
 
         <Button Text="="
