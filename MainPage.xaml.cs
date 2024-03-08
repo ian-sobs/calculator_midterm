@@ -5,6 +5,7 @@
         string input = ""; // the number you inputted in the calculator as a string 
         char operation = (char)0;
         float lOperand, rOperand;
+        bool pointSet = false;
 
         public MainPage()
         {
@@ -13,9 +14,11 @@
 
         public void handleClick(object sender, EventArgs e)
         {
+
             if (sender is Button button)
             {
-                if(calcOutput.Text == "0" || operation != (char)0)
+                string num = button.CommandParameter.ToString();
+                if (operation != (char)0)
                 {
                     calcOutput.Text = "";
                 }
@@ -23,17 +26,40 @@
 
                 if (input != "0")
                 {
-                    
-                    input += button.CommandParameter.ToString();
-                    calcOutput.Text = input;
+                    if (num == "." && !pointSet)
+                    {
+                        pointSet = true;
+                        if (calcOutput.Text == "0" || input == "")
+                        {
+                            input = "0";
+                        }
+                        input += num;
+                    }
+                    else if (num != ".")
+                    {
+                        input += num;
+                    }
                 }
-                
-
-                if(operation != (char)0)
+                else if (num != "0")
                 {
+                    if (num == "." && !pointSet)
+                    {
+                        pointSet = true;
+                        input += num;
+                    }
+                    else if (num != ".")
+                    {
+                        input = num;
+                    }
+                }
+                calcOutput.Text = input;
+
+                if (operation != (char)0 && input[input.Length - 1] != '.')
+                {
+
                     rOperand = float.Parse(input);
                 }
-                else
+                else if(operation == (char)0 && input[input.Length - 1] != '.')
                 {
                     lOperand = float.Parse(input);
                 }
@@ -44,6 +70,7 @@
         {
             if (sender is Button button)
             {
+                pointSet = false;
                 if(operation != (char)0)
                 {
                     calculate();
@@ -66,6 +93,7 @@
             input = "";
             operation = (char)0;
             lOperand = rOperand = 0;
+            pointSet = false;
         }
 
         public void OpEval(object sender, EventArgs e)
