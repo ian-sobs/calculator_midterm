@@ -122,6 +122,7 @@
                     lOperand /= rOperand;
                     break;
             }
+            lOperand = (float)Math.Round(lOperand, 4);
         }
 
         public void DeleteNum(object sender, EventArgs e)
