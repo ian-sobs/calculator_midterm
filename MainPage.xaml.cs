@@ -20,8 +20,12 @@
                     calcOutput.Text = "";
                 }
                 // Extract the value associated with the clicked button
-                calcOutput.Text += button.CommandParameter.ToString();
-                input += button.CommandParameter.ToString();
+
+                if (input != "0")
+                {
+                    calcOutput.Text += button.CommandParameter.ToString();
+                    input += button.CommandParameter.ToString();
+                }
                 
 
                 if(operation != (char)0)
@@ -40,6 +44,7 @@
             if (sender is Button button)
             {
                 calcOutput.Text = "0";
+                input = "";
                 string opString = button.CommandParameter.ToString();
                 operation = opString[0]; 
             }
@@ -49,8 +54,31 @@
         {
             calcOutput.Text = "0";
             input = "";
+            operation = (char)0;
+            lOperand = rOperand = 0;
         }
 
+        public void OpEval(object sender, EventArgs e)
+        {
+            switch(operation)
+            {
+                case '+':
+                    lOperand += rOperand;
+                    break;
+                case '-':
+                    lOperand -= rOperand;
+                    break;
+                case 'X':
+                    lOperand *= rOperand;
+                    break;
+                case '/':
+                    lOperand /= rOperand;
+                    break;    
+            }
+            rOperand = 0;
+            
+            calcOutput.Text = Convert.ToString(lOperand);
+        }
 
     }
 
